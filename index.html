@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Journal de bord — Recherche de transits, secteur TESS 108</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,450;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #0B0E17;
+    --ink-2: #10141F;
+    --panel: #141B2C;
+    --panel-line: #262f45;
+    --paper: #EDE8DB;
+    --paper-dim: #d8d2c2;
+    --amber: #E2A63B;
+    --amber-dim: #a67a2c;
+    --reject: #B8493D;
+    --confirm: #5E9C6B;
+    --marginal: #8b8570;
+    --ink-text: #cdd3e0;
+    --ink-text-dim: #8891a7;
+    --serif: "Fraunces", Georgia, serif;
+    --sans: "IBM Plex Sans", -apple-system, sans-serif;
+    --mono: "IBM Plex Mono", "SF Mono", monospace;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    *{ animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+
+  body{
+    margin:0;
+    background: var(--ink);
+    color: var(--ink-text);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  a{ color: var(--amber); }
+  a:focus-visible, button:focus-visible, .card:focus-visible{
+    outline: 2px solid var(--amber);
+    outline-offset: 3px;
+  }
+
+  .wrap{ max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+
+  /* ---- Margin-rule logbook device -------------------------------- */
+  .log{
+    position: relative;
+    padding-left: 34px;
+    border-left: 1px solid var(--panel-line);
+  }
+  .log::before{
+    content: "";
+    position: absolute;
+    left: -1px; top: 0; bottom: 0;
+    width: 1px;
+    background: var(--panel-line);
+  }
+
+  /* ---- Hero -------------------------------------------------------- */
+  header.hero{
+    padding: 96px 0 72px;
+    background:
+      radial-gradient(ellipse 900px 500px at 15% -10%, rgba(226,166,59,0.10), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 90% 10%, rgba(94,156,107,0.06), transparent 55%),
+      var(--ink);
+    border-bottom: 1px solid var(--panel-line);
+  }
+  .eyebrow{
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--amber);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+  .eyebrow::before{
+    content: "";
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--amber);
+    box-shadow: 0 0 0 3px rgba(226,166,59,0.18);
+  }
+  h1{
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(2.1rem, 5vw, 3.6rem);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    color: #f4f1e9;
+    margin: 0 0 26px;
+    max-width: 16ch;
+  }
+  h1 em{
+    font-style: italic;
+    color: var(--amber);
+  }
+  .lede{
+    font-size: 1.14rem;
+    color: var(--ink-text);
+    max-width: 56ch;
+    margin: 0 0 44px;
+  }
+  .lede strong{ color: #f4f1e9; font-weight: 600; }
+
+  .statbar{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--panel-line);
+    border: 1px solid var(--panel-line);
+    max-width: 780px;
+  }
+  .stat{
+    background: var(--ink-2);
+    padding: 18px 20px;
+  }
+  .stat .n{
+    font-family: var(--mono);
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--amber);
+    display:block;
+  }
+  .stat .l{
+    font-size: 0.8rem;
+    color: var(--ink-text-dim);
+    margin-top: 4px;
+  }
+
+  @media (max-width: 640px){
+    .statbar{ grid-template-columns: repeat(2, 1fr); }
+    header.hero{ padding: 64px 0 48px; }
+  }
+
+  /* ---- Sections ------------------------------------------------------ */
+  section{ padding: 84px 0; }
+  section + section{ border-top: 1px solid var(--panel-line); }
+
+  .section-head{ margin-bottom: 44px; max-width: 62ch; }
+  .section-num{
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--amber-dim);
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+    display:block;
+  }
+  h2{
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(1.6rem, 3.2vw, 2.3rem);
+    color: #f4f1e9;
+    margin: 0 0 14px;
+    line-height:1.15;
+  }
+  .section-head p{ color: var(--ink-text-dim); font-size: 1.02rem; }
+
+  /* ---- Validation block ------------------------------------------- */
+  .validation{
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+    align-items: center;
+  }
+  @media (max-width: 860px){ .validation{ grid-template-columns: 1fr; } }
+
+  .proof-card{
+    background: var(--paper);
+    color: #1c1a14;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.55);
+  }
+  .proof-card img{ display:block; width:100%; height:auto; }
+  .proof-card .cap{
+    padding: 14px 18px;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: #55503f;
+    border-top: 1px solid var(--paper-dim);
+    display:flex; justify-content:space-between; gap: 10px;
+  }
+
+  .match-list{ list-style:none; margin: 26px 0 0; padding:0; }
+  .match-list li{
+    display:flex; justify-content:space-between; gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px dashed var(--panel-line);
+    font-family: var(--mono);
+    font-size: 0.92rem;
+  }
+  .match-list .k{ color: var(--ink-text-dim); font-family: var(--sans); }
+  .match-list .v{ color: var(--confirm); text-align:right; }
+  .match-list .v small{ display:block; color: var(--ink-text-dim); font-family: var(--sans); font-size: 0.75rem; margin-top:2px; }
+
+  /* ---- Method timeline --------------------------------------------- */
+  .filter-entry{
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 22px;
+    padding: 26px 0;
+    border-bottom: 1px solid var(--panel-line);
+  }
+  .filter-entry:first-child{ padding-top: 0; }
+  .filter-entry:last-child{ border-bottom: none; }
+  .filter-tag{
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--ink-text-dim);
+    padding-top: 3px;
+  }
+  .filter-entry h3{
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: #f4f1e9;
+    margin: 0 0 8px;
+  }
+  .filter-entry p{ margin:0; color: var(--ink-text-dim); font-size: 0.96rem; max-width: 62ch;}
+  .filter-entry code{
+    font-family: var(--mono);
+    font-size: 0.85em;
+    color: var(--amber);
+    background: rgba(226,166,59,0.08);
+    padding: 1px 6px;
+    border-radius: 3px;
+  }
+
+  /* ---- Candidate cards / stamps ------------------------------------- */
+  .grid-cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 22px;
+  }
+  .card{
+    background: var(--panel);
+    border: 1px solid var(--panel-line);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+    display:flex;
+    flex-direction: column;
+  }
+  .card .shot{
+    position: relative;
+    background: var(--paper);
+    aspect-ratio: 16/10;
+    overflow:hidden;
+  }
+  .card .shot img{
+    width:100%; height:100%; object-fit: cover; object-position: top;
+    display:block;
+  }
+  .stamp{
+    position:absolute;
+    top: 14px; right: 14px;
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 5px 9px;
+    border: 2px solid currentColor;
+    border-radius: 3px;
+    transform: rotate(4deg);
+    background: rgba(11,14,23,0.82);
+    backdrop-filter: blur(2px);
+  }
+  .stamp.reject{ color: var(--reject); }
+  .stamp.confirm{ color: var(--confirm); }
+  .stamp.marginal{ color: var(--marginal); }
+
+  .card .body{ padding: 18px 20px 20px; flex:1; display:flex; flex-direction:column; }
+  .card .tic{
+    font-family: var(--mono);
+    font-size: 0.95rem;
+    color: #f4f1e9;
+    margin: 0 0 6px;
+  }
+  .card .coords{
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--ink-text-dim);
+    margin: 0 0 12px;
+  }
+  .card .verdict-text{
+    font-size: 0.9rem;
+    color: var(--ink-text);
+    margin: 0;
+    flex: 1;
+  }
+  .card .meta-row{
+    display:flex; gap: 14px; margin-top: 14px;
+    font-family: var(--mono); font-size: 0.72rem; color: var(--ink-text-dim);
+  }
+  .card .meta-row span b{ color: var(--amber); font-weight:600; }
+
+  /* ---- Status / map -------------------------------------------------- */
+  .status-block{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .status-note{
+    background: var(--panel);
+    border: 1px solid var(--panel-line);
+    border-left: 3px solid var(--amber);
+    padding: 24px 26px;
+    border-radius: 2px;
+  }
+  .status-note p{ margin:0; color: var(--ink-text); }
+  .status-note p + p{ margin-top: 12px; }
+  .map-card{ border-radius: 3px; overflow:hidden; border: 1px solid var(--panel-line); }
+  .map-card img{ width:100%; display:block; }
+
+  /* ---- Footer --------------------------------------------------------- */
+  footer{
+    padding: 48px 0 64px;
+    border-top: 1px solid var(--panel-line);
+  }
+  footer p{ color: var(--ink-text-dim); font-size: 0.85rem; margin: 0 0 8px; }
+  footer .tools{
+    font-family: var(--mono); font-size: 0.78rem; color: var(--ink-text-dim);
+  }
+  footer .tools b{ color: var(--ink-text); font-weight:500; }
+
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Secteur TESS 108 · Recherche de transits en cours</div>
+    <h1>Retrouver une planète que la NASA a déjà trouvée.<br>Puis en chercher une qu'elle n'a pas encore vue.</h1>
+    <p class="lede">Pipeline de détection de transits construit à partir de zéro, sans budget, sur des données publiques TESS et Kepler. Validé sur un système confirmé avant d'être lancé sur de vraies données inexplorées. <strong>À ce jour : aucune planète confirmée — et c'est raconté ici sans en cacher un mot.</strong></p>
+    <div class="statbar">
+    <!-- Généré par generer_site.py, ne pas éditer les stats à la main -->
+    <!-- STATS:START -->
+      <div class="stat"><span class="n">2</span><span class="l">redétections confirmées<br>(Kepler-69 b &amp; c)</span></div>
+      <div class="stat"><span class="n">4400+</span><span class="l">étoiles TESS passées<br>au crible</span></div>
+      <div class="stat"><span class="n">5</span><span class="l">filtres anti-faux-positifs<br>nés d'un vrai cas</span></div>
+      <div class="stat"><span class="n">0</span><span class="l">exoplanète confirmée<br>pour l'instant</span></div>
+    <!-- STATS:END -->
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ VALIDATION ============ -->
+  <section id="validation">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">01 — Preuve de méthode</span>
+        <h2>Avant de chercher l'inconnu, retrouver le connu</h2>
+        <p>Kepler-69 est un système à deux planètes confirmé depuis 2013. Le pipeline a été pointé dessus en aveugle — sans lui donner la période attendue — pour vérifier qu'il retrouve un vrai signal avant de lui faire confiance sur autre chose.</p>
+      </div>
+
+      <div class="validation">
+        <div class="proof-card">
+          <img src="assets/kepler69-validation.png" alt="Périodogramme BLS et courbe de lumière repliée de Kepler-69, montrant le transit détecté à 13.7218 jours">
+          <div class="cap">
+            <span>Kepler-69 · courbe repliée</span>
+            <span>lightkurve + BoxLeastSquares</span>
+          </div>
+        </div>
+
+        <div>
+          <ul class="match-list">
+            <li>
+              <span class="k">Kepler-69b — période publiée</span>
+              <span class="v">13.7 j<small>détecté : 13.7218 j</small></span>
+            </li>
+            <li>
+              <span class="k">Kepler-69c — période publiée</span>
+              <span class="v">242.4613 j<small>détecté : 242.4666 j</small></span>
+            </li>
+            <li>
+              <span class="k">Écart sur la planète c</span>
+              <span class="v">&lt; 1 h<small>sur une période de 242 jours</small></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ METHOD / FILTERS ============ -->
+  <section id="methode">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">02 — Le carnet des faux positifs</span>
+        <h2>Chaque filtre existe à cause d'une étoile précise</h2>
+        <p>Aucun de ces garde-fous n'a été ajouté par précaution théorique. Chacun corrige une erreur réellement commise, sur une vraie étoile, repérée en l'examinant à l'œil.</p>
+      </div>
+
+      <div class="log">
+        <div class="filter-entry">
+          <span class="filter-tag">FILTRE 01</span>
+          <div>
+            <h3>Bord de grille de recherche</h3>
+            <p>TIC 346888622 retrouvait deux fois la même période — 0.5000 j, exactement la borne basse testée. Le vrai signal, s'il existe, tombe hors de la plage explorée. <code>période ≈ borne → écarté</code></p>
+          </div>
+        </div>
+        <div class="filter-entry">
+          <span class="filter-tag">FILTRE 02</span>
+          <div>
+            <h3>Ratio durée/période excessif</h3>
+            <p>TIC 326242565 et TIC 65903024 donnaient des "transits" occupant 34 % et 44 % de leur cycle orbital. Une vraie planète transite rarement plus de 10-15 % de sa période. <code>durée / période &gt; 15 % → écarté</code></p>
+          </div>
+        </div>
+        <div class="filter-entry">
+          <span class="filter-tag">FILTRE 03</span>
+          <div>
+            <h3>Période dupliquée après masquage</h3>
+            <p>Douze étoiles retrouvaient leur propre signal jusqu'à 5 fois après masquage — TIC 120932152 : 1.2629 j, cinq fois d'affilée. Le masquage n'efface pas une variabilité continue. <code>signal non masqué → étoile entière invalidée</code></p>
+          </div>
+        </div>
+        <div class="filter-entry">
+          <span class="filter-tag">FILTRE 04</span>
+          <div>
+            <h3>Profondeur de transit excessive</h3>
+            <p>TIC 93441696 creusait 20 % de flux, en double bosse par cycle. Aucune planète n'atteint cette profondeur — seule une étoile compagnon le peut. <code>profondeur &gt; 5 % → écarté</code></p>
+          </div>
+        </div>
+        <div class="filter-entry">
+          <span class="filter-tag">FILTRE 05</span>
+          <div>
+            <h3>Cluster à 13.7 jours</h3>
+            <p>Plusieurs étoiles convergeaient vers la même période, à quelques heures près : 13.7 jours — la période orbitale de TESS elle-même. Chaque secteur contient une coupure de données au périgée, à mi-parcours. <code>période ≈ 13.7 j ± 0.9 → écarté</code></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CANDIDATES ============ -->
+  <section id="dossiers">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">03 — Dossiers examinés</span>
+        <h2>Ce qui a passé les filtres automatiques — puis l'œil</h2>
+        <p>Chaque étoile ci-dessous a survécu aux cinq filtres et mérité un examen visuel complet : périodogramme, cycle replié en entier, zoom sur le signal. Un tampon = un verdict, jamais retouché après coup.</p>
+      </div>
+
+      <div class="grid-cards">
+      <!-- Généré par generer_site.py à partir de verdicts.csv, ne pas éditer à la main -->
+      <!-- CARDS:START -->
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-150284425.png" alt="Courbe de lumière de TIC 150284425">
+            <span class="stamp reject">Binaire</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 150284425</p>
+            <p class="coords">RA 117.311 · DEC -35.243 · Tmag 6.03</p>
+            <p class="verdict-text">Creux net et profond (4.2 %) — le plus prometteur du lot. Mais l'étoile hôte est une A chaude de 3.6 R☉ : ça implique un compagnon de 7.17 rayons joviens. Trop gros pour une planète — naine rouge ou brune en transit.</p>
+            <div class="meta-row"><span>période <b>3.0293 j</b></span><span>snr <b>37.1</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-89045042.png" alt="Courbe de lumière de TIC 89045042">
+            <span class="stamp reject">Binaire</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 89045042</p>
+            <p class="coords">RA 47.594 · DEC -31.127 · Tmag 8.86</p>
+            <p class="verdict-text">Deux éclipses distinctes par cycle, décalées (pas à phase 0.5 pile) — signature d'une binaire à éclipses sur orbite excentrique, pas d'un transit planétaire isolé.</p>
+            <div class="meta-row"><span>période <b>12.6435 j</b></span><span>snr <b>14.7</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-93441696.png" alt="Courbe de lumière de TIC 93441696">
+            <span class="stamp reject">Binaire</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 93441696</p>
+            <p class="coords">RA 87.043 · DEC -20.023 · Tmag 7.96</p>
+            <p class="verdict-text">20 % de variation, double bosse par cycle — variation ellipsoïdale classique d'une binaire serrée déformée par la marée. Le cas qui a motivé le filtre de profondeur.</p>
+            <div class="meta-row"><span>période <b>0.6755 j</b></span><span>snr <b>76.7</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-166932528.png" alt="Courbe de lumière de TIC 166932528">
+            <span class="stamp reject">Variable</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 166932528</p>
+            <p class="coords">RA 60.170 · DEC -30.491 · Tmag 5.92</p>
+            <p class="verdict-text">Onde continue sur l'ensemble du cycle, forêt de pics comparables au périodogramme — étoile pulsante à fréquences multiples, pas un événement ponctuel.</p>
+            <div class="meta-row"><span>période <b>4.1054 j</b></span><span>snr <b>11.5</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-369470361.png" alt="Courbe de lumière de TIC 369470361">
+            <span class="stamp reject">Variable</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 369470361</p>
+            <p class="coords">RA 101.497 · DEC -14.796 · Tmag 5.23</p>
+            <p class="verdict-text">Même profil que TIC 166932528 — modulation continue, pas de creux isolé. SNR le plus faible des candidats retenus, cohérent avec un signal de pulsation ténu.</p>
+            <div class="meta-row"><span>période <b>1.1236 j</b></span><span>snr <b>10.0</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-54002166.png" alt="Courbe de lumière de TIC 54002166">
+            <span class="stamp marginal">Artefact probable</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 54002166</p>
+            <p class="coords">RA 23.427 · DEC -12.213 · Tmag 8.57</p>
+            <p class="verdict-text">La puissance grimpe encore au bord de la plage testée (15 j) au lieu de redescendre — la vraie période est probablement au-delà. Dupliqué à 0.8″ près sous un second identifiant TIC : même étoile, comptée deux fois.</p>
+            <div class="meta-row"><span>période <b>14.6955 j</b></span><span>snr <b>10.9</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-178155732.png" alt="Courbe de lumière de TIC 178155732">
+            <span class="stamp marginal">Non tranché</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 178155732</p>
+            <p class="coords">RA 42.985 · DEC -30.814 · Tmag 5.91</p>
+            <p class="verdict-text">Baseline plate, pas de faux positif évident — mais signal trop faible et bruité pour conclure. Ni écarté ni retenu : demande plus de données.</p>
+            <div class="meta-row"><span>période <b>3.5920 j</b></span><span>snr <b>14.2</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-326242565.png" alt="Courbe de lumière de TIC 326242565">
+            <span class="stamp reject">Variable</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 326242565</p>
+            <p class="coords">RA 41.278 · DEC -18.572 · Tmag 4.03</p>
+            <p class="verdict-text">Le tout premier candidat du projet. "Transit" occupant 34 % du cycle — ce cas précis a motivé la création du filtre de ratio durée/période.</p>
+            <div class="meta-row"><span>période <b>0.8263 j</b></span><span>snr <b>—</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-37606218.png" alt="Courbe de lumière de TIC 37606218">
+            <span class="stamp reject">Binaire (confirmée)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 37606218</p>
+            <p class="coords">RA 93.249 · DEC -27.880 · Tmag 9.26</p>
+            <p class="verdict-text">Le candidat le plus propre du projet -- passe tous les filtres automatiques ET l'examen visuel. Mais déjà étudiée par des astronomes professionnels (spectroscopie NIRPS/HARPS, MNRAS 2025) : c'est une naine M en orbite, pas une planète -- rayon proche d'une géante gazeuse, mais masse stellaire. Une contamination lumineuse de 21.6% par une étoile voisine (78'') brouille encore le signal. La limite exacte d'un pipeline photométrique seul : le rayon ne suffit pas, il faut la masse.</p>
+            <div class="meta-row"><span>période <b>7.8507 j</b></span><span>snr <b>10.8</b></span></div>
+          </div>
+        </div>
+    <!-- CARDS:END -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATUS ============ -->
+  <section id="etat">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">04 — Où ça en est</span>
+        <h2>Le balayage continue</h2>
+      </div>
+
+      <div class="status-block">
+        <div class="status-note">
+          <p><strong style="color:#f4f1e9">Zéro exoplanète confirmée à ce stade — sur plus de 2 700 étoiles.</strong> Ce n'est pas un échec : les transits détectables depuis le sol ou par relecture de données publiques restent rares, et l'essentiel des signaux réels appartient à des binaires ou des variables, pas à des planètes.</p>
+          <p>Ce que ce projet a produit de solide : un pipeline qui retrouve un système confirmé à moins d'une heure près sur 242 jours de période, et qui sait désormais écarter ses propres faux positifs sans intervention manuelle systématique. La recherche continue sur le reste du secteur 108.</p>
+        </div>
+
+        <div class="map-card">
+          <img src="assets/carte-galactique.png" alt="Carte des étoiles observées en coordonnées galactiques, avec les candidats mis en évidence, et un second panneau montrant l'échelle par rapport à la Voie lactée entière">
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="tools"><b>Données</b> : NASA/MIT TESS (secteur 108), archive MAST · <b>Outils</b> : Python, lightkurve, astropy, Box Least Squares · <b>Méthode</b> : recherche de transits par courbes de lumière publiques, sans instrument personnel</p>
+    <p>Projet individuel, sans budget. Rien ci-dessus n'est une découverte confirmée tant que ce n'est pas marqué comme tel.</p>
+  </div>
+</footer>
+
+</body>
+</html>
