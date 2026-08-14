@@ -104,15 +104,15 @@ def carte_html(v, r):
 """
 
 
-def stats_html(n_scannees, n_bruts, n_confirmees, n_filtres=5, n_redetections=2):
+def stats_html(n_scannees, n_redetections, n_filtres=5, n_nouvelles=0):
     def fmt(n):
         return f"{(n // 100) * 100}+" if n >= 200 else str(n)
 
     return f"""
-      <div class="stat"><span class="n">{n_redetections}</span><span class="l">redétections confirmées<br>(Kepler-69 b &amp; c)</span></div>
+      <div class="stat"><span class="n">{n_redetections}</span><span class="l">redétections confirmées<br>(systèmes déjà connus)</span></div>
       <div class="stat"><span class="n">{fmt(n_scannees)}</span><span class="l">étoiles TESS passées<br>au crible</span></div>
       <div class="stat"><span class="n">{n_filtres}</span><span class="l">filtres anti-faux-positifs<br>nés d'un vrai cas</span></div>
-      <div class="stat"><span class="n">{n_confirmees}</span><span class="l">exoplanète confirmée<br>pour l'instant</span></div>
+      <div class="stat"><span class="n">{n_nouvelles}</span><span class="l">découverte inédite<br>(pas encore -- honnêtement)</span></div>
 """
 
 
@@ -154,18 +154,19 @@ def main():
     n_scannees = len(resultats) if resultats else 2700
     n_bruts = sum(1 for r in resultats.values() if r.get("n_candidats", "0") not in ("0", ""))
     n_confirmees = sum(1 for v in verdicts if v["stamp_class"] == "confirm")
+    n_redetections = 2 + n_confirmees  # 2 = Kepler-69 b et c (validation initiale, hors verdicts.csv)
 
     with open(os.path.join(site, "index.html"), encoding="utf-8") as f:
         contenu = f.read()
 
-    contenu = remplacer_bloc(contenu, "STATS", stats_html(n_scannees, n_bruts, n_confirmees))
+    contenu = remplacer_bloc(contenu, "STATS", stats_html(n_scannees, n_redetections))
     contenu = remplacer_bloc(contenu, "CARDS", "".join(cartes))
 
     with open(os.path.join(site, "index.html"), "w", encoding="utf-8") as f:
         f.write(contenu)
 
     print(f"\nindex.html mis à jour : {n_scannees} étoiles scannées, "
-          f"{len(verdicts)} dossier(s) affiché(s), {n_confirmees} confirmée(s)")
+          f"{len(verdicts)} dossier(s) affiché(s), {n_redetections} redétection(s) confirmée(s)")
 
 
 if __name__ == "__main__":
