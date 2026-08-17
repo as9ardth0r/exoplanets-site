@@ -33,17 +33,27 @@ from PIL import Image
 CROP_DEFAUT = (0, 550, 1350, 1150)  # panneau "cycle complet"
 
 
-def charger_resultats(path):
-    """Renvoie un dict tic_id (str) -> ligne (dict) depuis resultats_candidats.csv."""
+def charger_resultats(pattern):
+    """Renvoie un dict tic_id (str) -> ligne (dict), agrégé sur TOUS les
+    fichiers resultats_S*.csv correspondant au motif (pas un seul fichier
+    fixe -- l'architecture est multi-secteurs depuis longtemps). Le
+    compte final est le nombre d'étoiles UNIQUES (une étoile vue dans
+    plusieurs secteurs qui se chevauchent n'est comptée qu'une fois),
+    cohérent avec ce que fait carte_galactique.py."""
+    import glob
     table = {}
-    if not os.path.exists(path):
-        print(f"Attention : {path} introuvable, RA/Dec/Tmag ne seront pas remplis.")
+    fichiers = sorted(glob.glob(pattern))
+    if not fichiers:
+        print(f"Attention : aucun fichier ne correspond à '{pattern}', "
+              f"RA/Dec/Tmag ne seront pas remplis et le compte d'étoiles sera inexact.")
         return table
-    with open(path, newline="", encoding="utf-8") as f:
-        for row in csv.DictReader(f):
-            m = re.search(r"\d+", row.get("nom", ""))
-            if m:
-                table[m.group()] = row
+    for chemin in fichiers:
+        with open(chemin, newline="", encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                m = re.search(r"\d+", row.get("nom", ""))
+                if m:
+                    table[m.group()] = row
+    print(f"{len(fichiers)} fichier(s) resultats_S*.csv agrégé(s), {len(table)} étoile(s) unique(s)")
     return table
 
 
@@ -129,6 +139,8 @@ def remplacer_bloc(contenu, marqueur, nouveau_html):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--site-dir", default=".")
+    parser.add_argument("--resultats", default="../exoplanets/resultats_S*.csv",
+                         help="Motif glob vers les fichiers resultats_S<N>.csv de tous les secteurs")
     parser.add_argument("--raw-dir", default="raw",
                          help="Dossier contenant les PNG bruts de exoplanet_bls_generic.py")
     args = parser.parse_args()
@@ -137,7 +149,7 @@ def main():
     crop_dir = os.path.join(site, "assets", "crop")
     os.makedirs(crop_dir, exist_ok=True)
 
-    resultats = charger_resultats(os.path.join(site, "resultats_candidats.csv"))
+    resultats = charger_resultats(args.resultats)
     verdicts = charger_verdicts(os.path.join(site, "verdicts.csv"))
 
     print(f"{len(verdicts)} dossier(s) dans verdicts.csv")
@@ -151,7 +163,7 @@ def main():
         recadrer_image(tic_id, args.raw_dir if os.path.isdir(args.raw_dir) else None, crop_dir, crop_box)
         cartes.append(carte_html(v, r))
 
-    n_scannees = len(resultats) if resultats else 2700
+    n_scannees = len(resultats)
     n_bruts = sum(1 for r in resultats.values() if r.get("n_candidats", "0") not in ("0", ""))
     n_confirmees = sum(1 for v in verdicts if v["stamp_class"] == "confirm")
     n_redetections = 2 + n_confirmees  # 2 = Kepler-69 b et c (validation initiale, hors verdicts.csv)
