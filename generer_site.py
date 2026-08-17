@@ -25,6 +25,7 @@ Structure attendue à côté de ce script :
 
 import argparse
 import csv
+import glob
 import os
 import re
 import sys
@@ -40,7 +41,6 @@ def charger_resultats(pattern):
     compte final est le nombre d'étoiles UNIQUES (une étoile vue dans
     plusieurs secteurs qui se chevauchent n'est comptée qu'une fois),
     cohérent avec ce que fait carte_galactique.py."""
-    import glob
     table = {}
     fichiers = sorted(glob.glob(pattern))
     if not fichiers:
@@ -126,6 +126,16 @@ def stats_html(n_scannees, n_redetections, n_filtres=5, n_nouvelles=0):
 """
 
 
+def status_html(n_scannees, n_redetections, n_secteurs):
+    def fmt(n):
+        return f"{(n // 100) * 100:,}".replace(",", " ") if n >= 1000 else str(n)
+
+    return f"""
+          <p><strong style="color:#f4f1e9">Zéro nouvelle exoplanète découverte à ce stade — sur plus de {fmt(n_scannees)} étoiles, {n_secteurs} secteur(s) TESS.</strong> Ce n'est pas un échec : les transits détectables par relecture de données publiques restent rares, et l'essentiel des signaux réels appartient à des binaires ou des variables, pas à des planètes.</p>
+          <p>Ce que ce projet a produit de solide : {n_redetections} redétections confirmées de systèmes déjà connus (dont une planète officiellement confirmée, TOI-6442.01, retrouvée à moins d'une heure près sur sa période), et un pipeline qui sait désormais écarter ses propres faux positifs sans intervention manuelle systématique. Le balayage continue sur le reste des secteurs disponibles.</p>
+"""
+
+
 def remplacer_bloc(contenu, marqueur, nouveau_html):
     debut = f"<!-- {marqueur}:START -->"
     fin = f"<!-- {marqueur}:END -->"
@@ -151,6 +161,7 @@ def main():
 
     resultats = charger_resultats(args.resultats)
     verdicts = charger_verdicts(os.path.join(site, "verdicts.csv"))
+    n_secteurs = len(glob.glob(args.resultats))
 
     print(f"{len(verdicts)} dossier(s) dans verdicts.csv")
     cartes = []
@@ -172,6 +183,7 @@ def main():
         contenu = f.read()
 
     contenu = remplacer_bloc(contenu, "STATS", stats_html(n_scannees, n_redetections))
+    contenu = remplacer_bloc(contenu, "STATUS", status_html(n_scannees, n_redetections, n_secteurs))
     contenu = remplacer_bloc(contenu, "CARDS", "".join(cartes))
 
     with open(os.path.join(site, "index.html"), "w", encoding="utf-8") as f:
