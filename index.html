@@ -349,8 +349,8 @@
     <div class="statbar">
     <!-- Généré par generer_site.py, ne pas éditer les stats à la main -->
     <!-- STATS:START -->
-      <div class="stat"><span class="n">9</span><span class="l">redétections confirmées<br>(systèmes déjà connus)</span></div>
-      <div class="stat"><span class="n">69800+</span><span class="l">étoiles TESS passées<br>au crible</span></div>
+      <div class="stat"><span class="n">21</span><span class="l">redétections confirmées<br>(systèmes déjà connus)</span></div>
+      <div class="stat"><span class="n">156500+</span><span class="l">étoiles TESS passées<br>au crible</span></div>
       <div class="stat"><span class="n">5</span><span class="l">filtres anti-faux-positifs<br>nés d'un vrai cas</span></div>
       <div class="stat"><span class="n">0</span><span class="l">découverte inédite<br>(pas encore -- honnêtement)</span></div>
     <!-- STATS:END -->
@@ -479,7 +479,7 @@
           </div>
           <div class="body">
             <p class="tic">TIC 89045042</p>
-            <p class="coords">RA 47.594 · DEC -31.127 · Tmag 8.85</p>
+            <p class="coords">RA 47.594 · DEC -31.127 · Tmag 8.86</p>
             <p class="verdict-text">Deux éclipses distinctes par cycle, décalées (pas à phase 0.5 pile) — signature d'une binaire à éclipses sur orbite excentrique, pas d'un transit planétaire isolé.</p>
             <div class="meta-row"><span>période <b>12.6435 j</b></span><span>snr <b>14.7</b></span></div>
           </div>
@@ -518,7 +518,7 @@
           </div>
           <div class="body">
             <p class="tic">TIC 369470361</p>
-            <p class="coords">RA 101.497 · DEC -14.796 · Tmag 5.21</p>
+            <p class="coords">RA 101.497 · DEC -14.796 · Tmag 5.23</p>
             <p class="verdict-text">Même profil que TIC 166932528 — modulation continue, pas de creux isolé. SNR le plus faible des candidats retenus, cohérent avec un signal de pulsation ténu.</p>
             <div class="meta-row"><span>période <b>1.1236 j</b></span><span>snr <b>10.0</b></span></div>
           </div>
@@ -739,7 +739,7 @@
           </div>
           <div class="body">
             <p class="tic">TIC 290476605</p>
-            <p class="coords">RA 139.166 · DEC 0.729 · Tmag 6.32</p>
+            <p class="coords">RA 139.166 · DEC 0.729 · Tmag 6.35</p>
             <p class="verdict-text">Même motif de double excursion rapprochée en phase que TIC 172742334. SNR faible (12.1), cohérent avec un signal peu fiable.</p>
             <div class="meta-row"><span>période <b>17.2327 j</b></span><span>snr <b>12.1</b></span></div>
           </div>
@@ -791,7 +791,7 @@
           </div>
           <div class="body">
             <p class="tic">TIC 191463077</p>
-            <p class="coords">RA 11.047 · DEC 46.236 · Tmag 7.20</p>
+            <p class="coords">RA 11.048 · DEC 46.235 · Tmag 7.42</p>
             <p class="verdict-text">Période et SNR identiques à TIC 601366244 -- très probablement la même étoile sous deux identifiants TIC différents. Motif en boucles multiples superposées dans le zoom, pas un creux net : exclut un transit propre de toute façon.</p>
             <div class="meta-row"><span>période <b>2.3593 j</b></span><span>snr <b>88.1</b></span></div>
           </div>
@@ -817,7 +817,7 @@
           </div>
           <div class="body">
             <p class="tic">TIC 38937499</p>
-            <p class="coords">RA 10.298 · DEC -68.458 · Tmag 8.72</p>
+            <p class="coords">RA 10.297 · DEC -68.458 · Tmag 8.76</p>
             <p class="verdict-text">4 creux régulièrement espacés dans un seul cycle replié -- la vraie période est le quart de celle testée (8.11j / 4 ≈ 2.03j), signature classique d'aliasing plutôt qu'un vrai transit à cette période.</p>
             <div class="meta-row"><span>période <b>8.1111 j</b></span><span>snr <b>100.2</b></span></div>
           </div>
@@ -986,9 +986,1049 @@
           </div>
           <div class="body">
             <p class="tic">TIC 219238496</p>
-            <p class="coords">RA 64.496 · DEC -48.396 · Tmag 8.79</p>
+            <p class="coords">RA 64.497 · DEC -48.396 · Tmag 8.75</p>
             <p class="verdict-text">Corrigé pour l'aliasing détecté au premier passage (la période initiale de 13.011j était 4x la vraie période). Mais même à la bonne période, le zoom montre au moins 3-4 creux distincts dans un seul cycle plutôt qu'un transit isolé, plus un pic étroit à phase 0 qui ressemble à un artefact instrumental. Cohérent avec une variable à pulsations multiples.</p>
             <div class="meta-row"><span>période <b>3.2527 j</b></span><span>snr <b>47.9</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-352250813.png" alt="Courbe de lumière de TIC 352250813">
+            <span class="stamp marginal">Non classée</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 352250813</p>
+            <p class="coords">RA 283.813 · DEC -14.691 · Tmag 6.82</p>
+            <p class="verdict-text">Creux net et isolé, taille implicite plausible (1.25 R_jup, hors de la zone ambiguë contrairement à TIC 93334206 et TIC 46627823). Absente de la table TOI et d'aucune publication trouvée. Reste au-delà de ce qu'un pipeline photométrique seul peut trancher sans suivi spectroscopique.</p>
+            <div class="meta-row"><span>période <b>0.9496 j</b></span><span>snr <b>12.1</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-442530946.png" alt="Courbe de lumière de TIC 442530946">
+            <span class="stamp confirm">Planète connue (TOI-7476.01)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 442530946</p>
+            <p class="coords">RA 315.477 · DEC -13.434 · Tmag 10.60</p>
+            <p class="verdict-text">Secteur 92. Statut officiel TOI : KP. Classé automatiquement, à vérifier visuellement avant publication sur le site.</p>
+            <div class="meta-row"><span>période <b>3.7138 j</b></span><span>snr <b>10.7</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-68952448.png" alt="Courbe de lumière de TIC 68952448">
+            <span class="stamp confirm">Planète connue (TOI-7484.01)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 68952448</p>
+            <p class="coords">RA 295.744 · DEC -19.950 · Tmag 11.36</p>
+            <p class="verdict-text">Secteur 92. Statut officiel TOI : KP. Classé automatiquement, à vérifier visuellement avant publication sur le site.</p>
+            <div class="meta-row"><span>période <b>4.6159 j</b></span><span>snr <b>14.5</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-188570092.png" alt="Courbe de lumière de TIC 188570092">
+            <span class="stamp confirm">Planète confirmée (TOI-294.01)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 188570092</p>
+            <p class="coords">RA 339.026 · DEC -17.000 · Tmag 11.39</p>
+            <p class="verdict-text">Secteur 92. Statut officiel TOI : CP. Classé automatiquement, à vérifier visuellement avant publication sur le site.</p>
+            <div class="meta-row"><span>période <b> j</b></span><span>snr <b>28.4</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-339570153.png" alt="Courbe de lumière de TIC 339570153">
+            <span class="stamp reject">Variable/binaire à contact</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 339570153</p>
+            <p class="coords">RA 253.623 · DEC -41.654 · Tmag 7.90</p>
+            <p class="verdict-text">Amplitude énorme (jusqu'à 2%, flux normalisé montant à 1.02) avec des boucles chaotiques autour du creux plutôt qu'un transit net -- signature de pulsateur ou de binaire à contact.</p>
+            <div class="meta-row"><span>période <b>3.1743 j</b></span><span>snr <b>32.9</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-51631133.png" alt="Courbe de lumière de TIC 51631133">
+            <span class="stamp reject">Structure multi-creux</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 51631133</p>
+            <p class="coords">RA 311.535 · DEC -11.344 · Tmag 9.22</p>
+            <p class="verdict-text">Au moins 3 creux distincts à des phases différentes dans un seul cycle (vers -0.15, +0.05, +0.15), plus une bosse suspecte vers +0.25-0.3 -- même défaut que TIC 219238496, pas un transit isolé.</p>
+            <div class="meta-row"><span>période <b>5.055 j</b></span><span>snr <b>22.4</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-61644291.png" alt="Courbe de lumière de TIC 61644291">
+            <span class="stamp marginal">Non classée</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 61644291</p>
+            <p class="coords">RA 176.841 · DEC -46.340 · Tmag 8.22</p>
+            <p class="verdict-text">Creux net et isolé, bon SNR. Rayon implicite 1.87 R_jup -- zone ambiguë entre géante gazeuse et naine M compacte. Absente de la table TOI et d'aucune publication trouvée.</p>
+            <div class="meta-row"><span>période <b>8.8406 j</b></span><span>snr <b>39.7</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-441014686.png" alt="Courbe de lumière de TIC 441014686">
+            <span class="stamp marginal">Non classée</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 441014686</p>
+            <p class="coords">RA 323.626 · DEC -19.196 · Tmag 8.31</p>
+            <p class="verdict-text">Creux net et isolé. Rayon implicite 0.69 R_jup -- taille sans ambiguïté cette fois (nettement sous-jovien), contrairement aux précédents. Absente de la table TOI et d'aucune publication trouvée -- reste malgré tout au-delà de ce qu'un pipeline photométrique seul peut confirmer.</p>
+            <div class="meta-row"><span>période <b>1.6688 j</b></span><span>snr <b>11.8</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-419729543.png" alt="Courbe de lumière de TIC 419729543">
+            <span class="stamp marginal">Non classée</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 419729543</p>
+            <p class="coords">RA 266.746 · DEC -16.592 · Tmag 9.66</p>
+            <p class="verdict-text">Creux net et isolé. Rayon stellaire absent du catalogue TIC (NaN) -- impossible de calculer la taille implicite par cette méthode, ni confirmable ni excluable sur ce critère. Absente de la table TOI et d'aucune publication trouvée.</p>
+            <div class="meta-row"><span>période <b>6.5938 j</b></span><span>snr <b>17.4</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-396907792.png" alt="Courbe de lumière de TIC 396907792">
+            <span class="stamp marginal">Non tranché</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 396907792</p>
+            <p class="coords">RA 267.659 · DEC -52.041 · Tmag 9.54</p>
+            <p class="verdict-text">Signal faible et bruité, creux à peine visible au-dessus du bruit de fond, SNR tout juste au-dessus du seuil -- ni écarté ni retenu.</p>
+            <div class="meta-row"><span>période <b>7.2584 j</b></span><span>snr <b>10.3</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-267263253.png" alt="Courbe de lumière de TIC 267263253">
+            <span class="stamp confirm">Planète confirmée (TOI-135.01)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 267263253</p>
+            <p class="coords">RA 7.329 · DEC -76.304 · Tmag 9.22</p>
+            <p class="verdict-text">Secteur 1;67. Statut officiel TOI : CP. Classé automatiquement, à vérifier visuellement avant publication sur le site.</p>
+            <div class="meta-row"><span>période <b> j</b></span><span>snr <b>37.1</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-151681127.png" alt="Courbe de lumière de TIC 151681127">
+            <span class="stamp marginal">Candidat ambigu (TESS) (TOI-671.01)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 151681127</p>
+            <p class="coords">RA 166.889 · DEC -40.207 · Tmag 9.14</p>
+            <p class="verdict-text">Secteur 63;99;100. Statut officiel TOI : APC. Classé automatiquement, à vérifier visuellement avant publication sur le site.</p>
+            <div class="meta-row"><span>période <b>10.1966 j</b></span><span>snr <b>17.2</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-350743714.png" alt="Courbe de lumière de TIC 350743714">
+            <span class="stamp reject">Faux positif (TESS) (TOI-165.01)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 350743714</p>
+            <p class="coords">RA 88.886 · DEC -57.291 · Tmag 9.67</p>
+            <p class="verdict-text">Secteur 4;63;67;98. Statut officiel TOI : FP. Classé automatiquement, à vérifier visuellement avant publication sur le site.</p>
+            <div class="meta-row"><span>période <b>7.7573 j</b></span><span>snr <b>269.7</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-6893917.png" alt="Courbe de lumière de TIC 6893917">
+            <span class="stamp confirm">Planète connue (TOI-5074.01)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 6893917</p>
+            <p class="coords">RA 125.617 · DEC 13.735 · Tmag 9.02</p>
+            <p class="verdict-text">Secteur 44;72. Statut officiel TOI : KP. Classé automatiquement, à vérifier visuellement avant publication sur le site.</p>
+            <div class="meta-row"><span>période <b> j</b></span><span>snr <b>13.6</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-172518755.png" alt="Courbe de lumière de TIC 172518755">
+            <span class="stamp confirm">Planète confirmée (TOI-1789.01)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 172518755</p>
+            <p class="coords">RA 142.743 · DEC 26.540 · Tmag 9.18</p>
+            <p class="verdict-text">Secteur 44. Statut officiel TOI : CP. Classé automatiquement, à vérifier visuellement avant publication sur le site.</p>
+            <div class="meta-row"><span>période <b> j</b></span><span>snr <b>118.6</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-186812530.png" alt="Courbe de lumière de TIC 186812530">
+            <span class="stamp confirm">Planète confirmée (TOI-503.01)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 186812530</p>
+            <p class="coords">RA 124.320 · DEC 12.601 · Tmag 9.20</p>
+            <p class="verdict-text">Secteur 44;72. Statut officiel TOI : CP. Classé automatiquement, à vérifier visuellement avant publication sur le site.</p>
+            <div class="meta-row"><span>période <b> j</b></span><span>snr <b>74.3</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-68577662.png" alt="Courbe de lumière de TIC 68577662">
+            <span class="stamp confirm">Planète connue (TOI-4606.01)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 68577662</p>
+            <p class="coords">RA 73.767 · DEC 18.654 · Tmag 9.31</p>
+            <p class="verdict-text">Secteur 44. Statut officiel TOI : KP. Classé automatiquement, à vérifier visuellement avant publication sur le site.</p>
+            <div class="meta-row"><span>période <b>11.1683 j</b></span><span>snr <b>29.8</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-83092282.png" alt="Courbe de lumière de TIC 83092282">
+            <span class="stamp confirm">Planète confirmée (TOI-622.01)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 83092282</p>
+            <p class="coords">RA 125.305 · DEC -46.484 · Tmag 8.54</p>
+            <p class="verdict-text">Secteur 8;9;62;88;89. Statut officiel TOI : CP. Classé automatiquement, à vérifier visuellement avant publication sur le site.</p>
+            <div class="meta-row"><span>période <b> j</b></span><span>snr <b>166.4</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-278866211.png" alt="Courbe de lumière de TIC 278866211">
+            <span class="stamp reject">Faux positif (TESS) (TOI-189.01)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 278866211</p>
+            <p class="coords">RA 100.808 · DEC -55.244 · Tmag 10.26</p>
+            <p class="verdict-text">Secteur 67;69;98. Statut officiel TOI : FP. Classé automatiquement, à vérifier visuellement avant publication sur le site.</p>
+            <div class="meta-row"><span>période <b> j</b></span><span>snr <b>419.6</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-230982885.png" alt="Courbe de lumière de TIC 230982885">
+            <span class="stamp confirm">Planète connue (TOI-195.01)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 230982885</p>
+            <p class="coords">RA 24.605 · DEC -55.772 · Tmag 9.97</p>
+            <p class="verdict-text">Secteur 69. Statut officiel TOI : KP. Classé automatiquement, à vérifier visuellement avant publication sur le site.</p>
+            <div class="meta-row"><span>période <b> j</b></span><span>snr <b>20.5</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-56399553.png" alt="Courbe de lumière de TIC 56399553">
+            <span class="stamp confirm">Planète connue (TOI-4623.01)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 56399553</p>
+            <p class="coords">RA 62.670 · DEC 24.402 · Tmag 11.55</p>
+            <p class="verdict-text">Secteur 70. Statut officiel TOI : KP. Classé automatiquement, à vérifier visuellement avant publication sur le site.</p>
+            <div class="meta-row"><span>période <b> j</b></span><span>snr <b>14.1</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-229285649.png" alt="Courbe de lumière de TIC 229285649">
+            <span class="stamp reject">Faux positif (TESS) (TOI-2591.01)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 229285649</p>
+            <p class="coords">RA 98.024 · DEC 11.852 · Tmag 10.77</p>
+            <p class="verdict-text">Secteur 72. Statut officiel TOI : FP. Classé automatiquement, à vérifier visuellement avant publication sur le site.</p>
+            <div class="meta-row"><span>période <b> j</b></span><span>snr <b>18.3</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-289539327.png" alt="Courbe de lumière de TIC 289539327">
+            <span class="stamp reject">Faux positif (TESS) (TOI-1186.01)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 289539327</p>
+            <p class="coords">RA 251.633 · DEC 65.715 · Tmag 9.92</p>
+            <p class="verdict-text">Secteur 79. Statut officiel TOI : FP. Classé automatiquement, à vérifier visuellement avant publication sur le site.</p>
+            <div class="meta-row"><span>période <b>11.2466 j</b></span><span>snr <b>176.6</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-258777137.png" alt="Courbe de lumière de TIC 258777137">
+            <span class="stamp reject">Faux positif (TESS) (TOI-1183.01)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 258777137</p>
+            <p class="coords">RA 286.747 · DEC 71.712 · Tmag 9.95</p>
+            <p class="verdict-text">Secteur 79. Statut officiel TOI : FP. Classé automatiquement, à vérifier visuellement avant publication sur le site.</p>
+            <div class="meta-row"><span>période <b> j</b></span><span>snr <b>118.9</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-1718201850.png" alt="Courbe de lumière de TIC 1718201850">
+            <span class="stamp marginal">Candidat ambigu (TESS) (TOI-1351.01)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 1718201850</p>
+            <p class="coords">RA 286.746 · DEC 71.712 · Tmag 10.33</p>
+            <p class="verdict-text">Secteur 79. Statut officiel TOI : APC. Classé automatiquement, à vérifier visuellement avant publication sur le site.</p>
+            <div class="meta-row"><span>période <b> j</b></span><span>snr <b>80.6</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-428787891.png" alt="Courbe de lumière de TIC 428787891">
+            <span class="stamp confirm">Planète confirmée (TOI-2154.01)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 428787891</p>
+            <p class="coords">RA 71.028 · DEC 84.364 · Tmag 10.66</p>
+            <p class="verdict-text">Secteur 79. Statut officiel TOI : CP. Classé automatiquement, à vérifier visuellement avant publication sur le site.</p>
+            <div class="meta-row"><span>période <b>3.8241 j</b></span><span>snr <b>214.8</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-298495970.png" alt="Courbe de lumière de TIC 298495970">
+            <span class="stamp reject">Faux positif (TESS) (TOI-2157.01)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 298495970</p>
+            <p class="coords">RA 261.718 · DEC 25.849 · Tmag 10.70</p>
+            <p class="verdict-text">Secteur 79. Statut officiel TOI : FP. Classé automatiquement, à vérifier visuellement avant publication sur le site.</p>
+            <div class="meta-row"><span>période <b>8.4244 j</b></span><span>snr <b>14.4</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-470127886.png" alt="Courbe de lumière de TIC 470127886">
+            <span class="stamp candidat">Candidat TESS officiel (TOI-2031.01)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 470127886</p>
+            <p class="coords">RA 331.118 · DEC 81.566 · Tmag 10.76</p>
+            <p class="verdict-text">Secteur 79. Statut officiel TOI : PC. Classé automatiquement, à vérifier visuellement avant publication sur le site.</p>
+            <div class="meta-row"><span>période <b> j</b></span><span>snr <b>157.7</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-449050248.png" alt="Courbe de lumière de TIC 449050248">
+            <span class="stamp reject">Faux positif (TESS) (TOI-953.01)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 449050248</p>
+            <p class="coords">RA 67.553 · DEC 5.298 · Tmag 9.87</p>
+            <p class="verdict-text">Secteur 98. Statut officiel TOI : FP. Classé automatiquement, à vérifier visuellement avant publication sur le site.</p>
+            <div class="meta-row"><span>période <b>2.9684 j</b></span><span>snr <b>30.8</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-417734853.png" alt="Courbe de lumière de TIC 417734853">
+            <span class="stamp reject">Binaire (éclipse secondaire)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 417734853</p>
+            <p class="coords">RA 299.508 · DEC 67.861 · Tmag 8.85</p>
+            <p class="verdict-text">Vu dans 8 secteurs indépendants. Deux creux distincts visibles dans le cycle complet -- le principal à phase 0 et une éclipse secondaire décalée vers phase +0.4, signature classique de binaire excentrique.</p>
+            <div class="meta-row"><span>période <b>11.4468 j</b></span><span>snr <b>65.7</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-160618494.png" alt="Courbe de lumière de TIC 160618494">
+            <span class="stamp reject">Binaire (ellipsoïdale/rasante)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 160618494</p>
+            <p class="coords">RA 246.349 · DEC 74.928 · Tmag 8.91</p>
+            <p class="verdict-text">Vu dans 9 secteurs indépendants. Forme large et arrondie, asymétrique, sans bords nets -- typique d'une éclipse rasante ou d'une variation ellipsoïdale de binaire serrée plutôt qu'un transit franc.</p>
+            <div class="meta-row"><span>période <b>4.2611 j</b></span><span>snr <b>118.5</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-309658221.png" alt="Courbe de lumière de TIC 309658221">
+            <span class="stamp reject">Binaire pulsante (confirmée)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 309658221</p>
+            <p class="coords">RA 79.254 · DEC -61.514 · Tmag 9.86</p>
+            <p class="verdict-text">Binaire à éclipses pulsante publiée et confirmée (Lee et al. 2019, ApJ, 'The Pulsating Eclipsing Binary TIC 309658221 in a 7.59 Day Orbit') -- étoile de type delta Scuti. Période officielle 7.5952j, exactement le double de la période détectée ici (3.798j) : notre pipeline a trouvé l'harmonique à moitié période, biais classique sur les binaires à profondeurs primaire/secondaire proches.</p>
+            <div class="meta-row"><span>période <b>3.7980 j</b></span><span>snr <b>241.9</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-167554898.png" alt="Courbe de lumière de TIC 167554898">
+            <span class="stamp marginal">Non classée</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 167554898</p>
+            <p class="coords">RA 101.316 · DEC -61.091 · Tmag 9.68</p>
+            <p class="verdict-text">Vue dans 5 secteurs indépendants, SNR le plus élevé du projet (293). Rayon implicite 1.56 R_jup -- zone ambiguë. Absente de la table TOI et d'aucune publication trouvée.</p>
+            <div class="meta-row"><span>période <b>4.4547 j</b></span><span>snr <b>293.0</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-734505586.png" alt="Courbe de lumière de TIC 734505586">
+            <span class="stamp marginal">Non classée</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 734505586</p>
+            <p class="coords">RA 88.885 · DEC -57.291 · Tmag 10.44</p>
+            <p class="verdict-text">Vue dans 3 secteurs indépendants. Rayon implicite 1.14 R_jup -- taille sans ambiguïté, comparable aux meilleurs candidats du projet. Absente de la table TOI et d'aucune publication trouvée.</p>
+            <div class="meta-row"><span>période <b>7.7576 j</b></span><span>snr <b>246.8</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-230070983.png" alt="Courbe de lumière de TIC 230070983">
+            <span class="stamp reject">Binaire (éclipse secondaire)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 230070983</p>
+            <p class="coords">RA 243.583 · DEC 67.588 · Tmag 9.73</p>
+            <p class="verdict-text">Second creux visible vers phase +0.4-0.45 en plus du principal à phase 0 -- éclipse secondaire décalée, signature de binaire.</p>
+            <div class="meta-row"><span>période <b>7.3512 j</b></span><span>snr <b>122.6</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-116417661.png" alt="Courbe de lumière de TIC 116417661">
+            <span class="stamp reject">Binaire (ellipsoïdale)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 116417661</p>
+            <p class="coords">RA 7.890 · DEC -36.274 · Tmag 9.23</p>
+            <p class="verdict-text">Forme large et graduelle en V sans bords nets, couvrant près de 40% du cycle sur une période très courte (1.14j) -- variation ellipsoïdale typique d'une binaire très serrée.</p>
+            <div class="meta-row"><span>période <b>1.1381 j</b></span><span>snr <b>46.2</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-307844756.png" alt="Courbe de lumière de TIC 307844756">
+            <span class="stamp reject">Structure double-creux</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 307844756</p>
+            <p class="coords">RA 127.485 · DEC 37.071 · Tmag 7.49</p>
+            <p class="verdict-text">Deux creux distincts et proches en phase (vers -0.04 et +0.04) plutôt qu'une éclipse isolée -- baseline exceptionnellement plate qui masquait cette structure sur la vignette rapide. Périodogramme aussi atypique (plateaux successifs plutôt que pics nets).</p>
+            <div class="meta-row"><span>période <b>2.5068 j</b></span><span>snr <b>37.8</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-229608810.png" alt="Courbe de lumière de TIC 229608810">
+            <span class="stamp reject">Trop gros pour une planète</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 229608810</p>
+            <p class="coords">RA 274.471 · DEC 75.131 · Tmag 10.79</p>
+            <p class="verdict-text">Rayon implicite 2.16 R_jup -- dépasse le seuil de plausibilité planétaire, probablement une naine rouge ou brune en transit.</p>
+            <div class="meta-row"><span>période <b>3.5432 j</b></span><span>snr <b>107.2</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-229452949.png" alt="Courbe de lumière de TIC 229452949">
+            <span class="stamp marginal">Non classée</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 229452949</p>
+            <p class="coords">RA 294.401 · DEC 63.856 · Tmag 10.69</p>
+            <p class="verdict-text">Creux net et isolé. Rayon implicite 1.86 R_jup -- zone ambiguë. Absente de la table TOI et d'aucune publication trouvée.</p>
+            <div class="meta-row"><span>période <b>6.1429 j</b></span><span>snr <b>124.2</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-420114772.png" alt="Courbe de lumière de TIC 420114772">
+            <span class="stamp marginal">Non classée</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 420114772</p>
+            <p class="coords">RA 290.430 · DEC 74.763 · Tmag 10.05</p>
+            <p class="verdict-text">Creux net et isolé, SNR élevé (250.8). Rayon implicite 1.73 R_jup -- zone ambiguë. Absente de la table TOI et d'aucune publication trouvée.</p>
+            <div class="meta-row"><span>période <b>3.2345 j</b></span><span>snr <b>250.8</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-382517745.png" alt="Courbe de lumière de TIC 382517745">
+            <span class="stamp marginal">Non classée</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 382517745</p>
+            <p class="coords">RA 117.452 · DEC -64.042 · Tmag 10.60</p>
+            <p class="verdict-text">Creux net et isolé, transit arrondi sans éclipse secondaire visible. Rayon implicite 1.05 R_jup -- taille sans ambiguïté, dans la gamme des planètes confirmées. Absente de la table TOI et d'aucune publication trouvée.</p>
+            <div class="meta-row"><span>période <b>10.4406 j</b></span><span>snr <b>—</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-57915771.png" alt="Courbe de lumière de TIC 57915771">
+            <span class="stamp marginal">Non classée</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 57915771</p>
+            <p class="coords">RA 103.773 · DEC 23.391 · Tmag 10.63</p>
+            <p class="verdict-text">Creux isolé, périodogramme très propre (meilleur S/N visuel du lot). Rayon implicite 1.37 R_jup -- zone ambiguë entre géante gazeuse et naine M compacte. Absente de la table TOI et d'aucune publication trouvée.</p>
+            <div class="meta-row"><span>période <b>4.1166 j</b></span><span>snr <b>—</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-317839169.png" alt="Courbe de lumière de TIC 317839169">
+            <span class="stamp marginal">Non classée</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 317839169</p>
+            <p class="coords">RA 353.757 · DEC 72.788 · Tmag 8.95</p>
+            <p class="verdict-text">Creux isolé, pic dominant très net dans le périodogramme. Rayon implicite 1.80 R_jup -- zone ambiguë entre géante gazeuse et naine M compacte. Absente de la table TOI et d'aucune publication trouvée.</p>
+            <div class="meta-row"><span>période <b>9.338 j</b></span><span>snr <b>—</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-456425391.png" alt="Courbe de lumière de TIC 456425391">
+            <span class="stamp marginal">Non classée</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 456425391</p>
+            <p class="coords">RA 231.858 · DEC -65.495 · Tmag 9.36</p>
+            <p class="verdict-text">Creux net et isolé, harmoniques cohérentes dans le périodogramme. Rayon implicite 1.80 R_jup -- zone ambiguë entre géante gazeuse et naine M compacte. Absente de la table TOI et d'aucune publication trouvée.</p>
+            <div class="meta-row"><span>période <b>8.8455 j</b></span><span>snr <b>—</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-448860246.png" alt="Courbe de lumière de TIC 448860246">
+            <span class="stamp reject">Trop gros pour une planète</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 448860246</p>
+            <p class="coords">RA 213.800 · DEC -71.234 · Tmag 8.67</p>
+            <p class="verdict-text">Transit le plus net du lot visuellement (box net, périodogramme très propre, pas d'éclipse secondaire visible). Mais l'étoile hôte est une A chaude (9839 K, 2.82 R☉) : ça implique un compagnon de 2.61 rayons joviens. Trop gros pour une planète -- probablement une naine rouge ou brune en transit.</p>
+            <div class="meta-row"><span>période <b>5.4005 j</b></span><span>snr <b>—</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-198555959.png" alt="Courbe de lumière de TIC 198555959">
+            <span class="stamp reject">Structure double-creux</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 198555959</p>
+            <p class="coords">RA 238.048 · DEC 64.884 · Tmag 9.59</p>
+            <p class="verdict-text">Recherche affinée (1.8-2.4j) révèle un pic isolé et écrasant à 2.0959j (~16.7672/8, confirme l'alias du scan large) -- mais le repliement à la vraie période montre toujours deux creux distincts et rapprochés en phase par cycle, pas un transit isolé. L'hypothèse initiale de variabilité continue est écartée par la netteté de ce nouveau pic.</p>
+            <div class="meta-row"><span>période <b>2.0959 j</b></span><span>snr <b>—</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-115980439.png" alt="Courbe de lumière de TIC 115980439">
+            <span class="stamp reject">Structure double-creux</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 115980439</p>
+            <p class="coords">RA 84.739 · DEC 30.432 · Tmag 10.93</p>
+            <p class="verdict-text">Recherche affinée (4-8j) révèle un pic net à 6.9231j (~13.8465/2), plus élevé que le pic du scan large initial -- mais le repliement montre deux creux profonds (~2.2%) et rapprochés en phase par cycle, pas un transit isolé. L'hypothèse initiale d'artefact TESS à 13.7j est écartée : la netteté et la profondeur des deux creux ne correspondent pas à une simple coupure de données.</p>
+            <div class="meta-row"><span>période <b>6.9231 j</b></span><span>snr <b>—</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-232643392.png" alt="Courbe de lumière de TIC 232643392">
+            <span class="stamp marginal">Non tranché</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 232643392</p>
+            <p class="coords">RA 281.614 · DEC 54.277 · Tmag 9.69</p>
+            <p class="verdict-text">Périodogramme avec pic net et harmonique 2:1 cohérente, mais le transit replié reste trop bruité pour distinguer un creux isolé net d'une simple fluctuation, même après nouvelle recherche sur la plage complète. Ni écarté ni retenu.</p>
+            <div class="meta-row"><span>période <b>9.8697 j</b></span><span>snr <b>—</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-434294623.png" alt="Courbe de lumière de TIC 434294623">
+            <span class="stamp reject">Structure double-creux</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 434294623</p>
+            <p class="coords">RA 93.304 · DEC 14.792 · Tmag 10.61</p>
+            <p class="verdict-text">Deux creux distincts et rapprochés en phase par cycle plutôt qu'un transit isolé, visibles dans le cycle complet et le zoom -- même motif que TIC 49701947 et TIC 307844756. Ratio durée/période (3.5%) et puissance/bruit (26.1) ne sont pourtant pas suspects pris isolément : c'est la structure du repliement qui trahit la binaire, pas les métriques globales.</p>
+            <div class="meta-row"><span>période <b>5.6504 j</b></span><span>snr <b>26.1</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-61113635.png" alt="Courbe de lumière de TIC 61113635">
+            <span class="stamp reject">Binaire (ellipsoïdale)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 61113635</p>
+            <p class="coords">RA 52.214 · DEC 23.015 · Tmag 12.01</p>
+            <p class="verdict-text">Creux large et graduel sans bords nets, couvrant une bonne partie du cycle -- variation ellipsoïdale typique d'une binaire serrée déformée par la marée, même motif que TIC 385231167 et TIC 116417661. Ratio durée/période (3.0%) et puissance/bruit (22.7) restent dans la norme malgré la forme problématique.</p>
+            <div class="meta-row"><span>période <b>3.3472 j</b></span><span>snr <b>22.7</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-229070209.png" alt="Courbe de lumière de TIC 229070209">
+            <span class="stamp marginal">Non tranché</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 229070209</p>
+            <p class="coords">RA 350.988 · DEC -32.795 · Tmag 9.40</p>
+            <p class="verdict-text">Puissance BLS encore montante au bord de la plage testée même étendue à 40j -- signal probablement au-delà, ou artefact de fonction de fenêtre. Seulement 2 secteurs disponibles espacés de ~4 ans (couverture de phase très partielle, larges trous dans le cycle replié). Creux individuel visible et net (~0.4%) mais période non fiable avec cette couverture temporelle. Ni écarté ni retenu.</p>
+            <div class="meta-row"><span>période <b>39.0677 j</b></span><span>snr <b>—</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-458377744.png" alt="Courbe de lumière de TIC 458377744">
+            <span class="stamp marginal">Non classée</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 458377744</p>
+            <p class="coords">RA 109.809 · DEC 25.425 · Tmag 10.74</p>
+            <p class="verdict-text">Transit le plus net et le meilleur signal du lot (puissance/bruit 34.3, harmoniques cohérentes à 7.46/14.9/22.4j). Rayon implicite 1.18 R_jup -- taille sans ambiguïté, dans la gamme des planètes confirmées. Absente de la table TOI et d'aucune publication trouvée.</p>
+            <div class="meta-row"><span>période <b>7.4562 j</b></span><span>snr <b>34.3</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-430144041.png" alt="Courbe de lumière de TIC 430144041">
+            <span class="stamp marginal">Non classée</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 430144041</p>
+            <p class="coords">RA 96.414 · DEC 23.770 · Tmag 10.00</p>
+            <p class="verdict-text">Creux net et isolé, bonne harmonique 2:1 dans le périodogramme. Rayon implicite 1.27 R_jup -- taille sans ambiguïté. Absente de la table TOI et d'aucune publication trouvée.</p>
+            <div class="meta-row"><span>période <b>1.9922 j</b></span><span>snr <b>12.8</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-137501278.png" alt="Courbe de lumière de TIC 137501278">
+            <span class="stamp marginal">Non classée</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 137501278</p>
+            <p class="coords">RA 132.971 · DEC 82.773 · Tmag 9.04</p>
+            <p class="verdict-text">Creux net mais peu profond, bien défini malgré 10 secteurs de données. Rayon implicite 0.91 R_jup -- taille sans ambiguïté, sous-jovien. Absente de la table TOI et d'aucune publication trouvée.</p>
+            <div class="meta-row"><span>période <b>4.2709 j</b></span><span>snr <b>14.2</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-175233315.png" alt="Courbe de lumière de TIC 175233315">
+            <span class="stamp marginal">Non classée</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 175233315</p>
+            <p class="coords">RA 129.797 · DEC 18.935 · Tmag 10.62</p>
+            <p class="verdict-text">Creux net et assez profond, mais périodogramme chargé de nombreux pics secondaires comparables. Rayon implicite 0.73 R_jup -- taille sans ambiguïté cette fois, nettement sous-jovien. Absente de la table TOI et d'aucune publication trouvée.</p>
+            <div class="meta-row"><span>période <b>1.8109 j</b></span><span>snr <b>10.1</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-404736807.png" alt="Courbe de lumière de TIC 404736807">
+            <span class="stamp marginal">Non classée</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 404736807</p>
+            <p class="coords">RA 30.448 · DEC 13.023 · Tmag 8.99</p>
+            <p class="verdict-text">Creux peu profond mais cohérent, données un peu éparses. Rayon implicite 0.41 R_jup -- taille sans ambiguïté, nettement sous-jovien. Absente de la table TOI et d'aucune publication trouvée.</p>
+            <div class="meta-row"><span>période <b>12.6704 j</b></span><span>snr <b>9.0</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-77961022.png" alt="Courbe de lumière de TIC 77961022">
+            <span class="stamp marginal">Non classée</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 77961022</p>
+            <p class="coords">RA 88.251 · DEC 24.000 · Tmag 10.45</p>
+            <p class="verdict-text">V propre et symétrique, périodogramme net. Rayon implicite 1.73 R_jup -- zone ambiguë entre géante gazeuse et naine M compacte. Absente de la table TOI et d'aucune publication trouvée.</p>
+            <div class="meta-row"><span>période <b>9.0489 j</b></span><span>snr <b>11.3</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-456609929.png" alt="Courbe de lumière de TIC 456609929">
+            <span class="stamp marginal">Non classée</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 456609929</p>
+            <p class="coords">RA 282.352 · DEC -59.421 · Tmag 8.68</p>
+            <p class="verdict-text">Transit propre malgré un périodogramme très bruité en arrière-plan. Rayon implicite 1.72 R_jup -- zone ambiguë entre géante gazeuse et naine M compacte. Absente de la table TOI et d'aucune publication trouvée.</p>
+            <div class="meta-row"><span>période <b>4.5527 j</b></span><span>snr <b>7.7</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-320913313.png" alt="Courbe de lumière de TIC 320913313">
+            <span class="stamp marginal">Non classée</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 320913313</p>
+            <p class="coords">RA 300.281 · DEC -55.312 · Tmag 9.92</p>
+            <p class="verdict-text">Période corrigée par la recherche fine (5.4687j de la grille rapide était en fait le double de la vraie période). Rayon implicite 1.89 R_jup -- zone ambiguë, proche du seuil de plausibilité. Absente de la table TOI et d'aucune publication trouvée.</p>
+            <div class="meta-row"><span>période <b>2.7273 j</b></span><span>snr <b>9.2</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-334886280.png" alt="Courbe de lumière de TIC 334886280">
+            <span class="stamp marginal">Non classée</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 334886280</p>
+            <p class="coords">RA 171.612 · DEC -16.593 · Tmag 9.77</p>
+            <p class="verdict-text">Creux net des deux côtés de la fenêtre de zoom (effet normal d'enroulement de phase, période proche de la largeur de fenêtre). Rayon implicite 1.98 R_jup -- juste sous le seuil de plausibilité planétaire, à la limite haute. Absente de la table TOI et d'aucune publication trouvée.</p>
+            <div class="meta-row"><span>période <b>12.0015 j</b></span><span>snr <b>11.0</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-414920805.png" alt="Courbe de lumière de TIC 414920805">
+            <span class="stamp reject">Trop gros pour une planète</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 414920805</p>
+            <p class="coords">RA 15.041 · DEC 12.217 · Tmag 11.04</p>
+            <p class="verdict-text">Dip net et bien isolé, mais rayon implicite 2.03 R_jup -- dépasse le seuil de plausibilité planétaire, probablement une naine rouge ou brune en transit.</p>
+            <div class="meta-row"><span>période <b>2.3107 j</b></span><span>snr <b>8.9</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-178247340.png" alt="Courbe de lumière de TIC 178247340">
+            <span class="stamp reject">Forme non-transit</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 178247340</p>
+            <p class="coords">RA 127.935 · DEC 20.664 · Tmag 9.76</p>
+            <p class="verdict-text">Creux principal net à phase 0, mais remontée nette du flux au-dessus de la baseline vers phase +0.3 (jusqu'à ~1.007-1.008) -- même défaut structurel que TIC 142677613 déjà écarté pour cette raison. Pas un transit isolé propre.</p>
+            <div class="meta-row"><span>période <b>3.6976 j</b></span><span>snr <b>10.8</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-425549135.png" alt="Courbe de lumière de TIC 425549135">
+            <span class="stamp reject">Binaire (éclipse secondaire)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 425549135</p>
+            <p class="coords">RA 286.090 · DEC -34.198 · Tmag 9.59</p>
+            <p class="verdict-text">Creux principal net à phase 0, mais excursion secondaire distincte vers phase 0.43-0.47 -- exactement la zone où le script invite à chercher une 2e éclipse. Même motif que TIC 417734853 et TIC 230070983, signature de binaire à éclipses.</p>
+            <div class="meta-row"><span>période <b>5.0207 j</b></span><span>snr <b>13.0</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-55655482.png" alt="Courbe de lumière de TIC 55655482">
+            <span class="stamp marginal">Non tranché</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 55655482</p>
+            <p class="coords">RA 101.314 · DEC 61.492 · Tmag 9.22</p>
+            <p class="verdict-text">Périodogramme à peine au-dessus du bruit (puissance max ~120, largement en dessous du reste du lot), dip à peine distinguable dans le repliement. Signal trop faible et bruité pour conclure.</p>
+            <div class="meta-row"><span>période <b>7.9193 j</b></span><span>snr <b>12.0</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-346597868.png" alt="Courbe de lumière de TIC 346597868">
+            <span class="stamp marginal">Non tranché</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 346597868</p>
+            <p class="coords">RA 57.345 · DEC 27.227 · Tmag 11.09</p>
+            <p class="verdict-text">Données de transit très éparses (durée détectée 0.05j), dip peu convaincant, périodogramme dominé par du bruit au-delà de 12.7j. Signal trop faible pour conclure.</p>
+            <div class="meta-row"><span>période <b>12.6753 j</b></span><span>snr <b>6.8</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-279786731.png" alt="Courbe de lumière de TIC 279786731">
+            <span class="stamp reject">Trop gros pour une planète</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 279786731</p>
+            <p class="coords">RA 86.281 · DEC -8.946 · Tmag 8.92</p>
+            <p class="verdict-text">Transit profond et symétrique en apparence, mais légère sous-structure en double creux au fond du transit -- possible binaire rasante plutôt qu'une simple tache stellaire traversée. Rayon implicite 2.29 R_jup confirme : dépasse le seuil de plausibilité planétaire, probablement une naine rouge ou brune en transit.</p>
+            <div class="meta-row"><span>période <b>3.7221 j</b></span><span>snr <b>16.5</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-58719708.png" alt="Courbe de lumière de TIC 58719708">
+            <span class="stamp marginal">Non tranché</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 58719708</p>
+            <p class="coords">RA 2.942 · DEC 2.354 · Tmag 10.98</p>
+            <p class="verdict-text">Périodogramme à peine au-dessus du bruit, aucun creux distinguable dans le repliement. Un seul secteur de données (couverture de phase très partielle, grands trous). Signal trop faible pour conclure.</p>
+            <div class="meta-row"><span>période <b>6.6330 j</b></span><span>snr <b>5.2</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-395182898.png" alt="Courbe de lumière de TIC 395182898">
+            <span class="stamp marginal">Non tranché</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 395182898</p>
+            <p class="coords">RA 205.047 · DEC -74.079 · Tmag 8.27</p>
+            <p class="verdict-text">Signal faible dans le périodogramme, couverture de phase clairsemée malgré 3 secteurs (grand vide au centre du zoom), dip à peine visible. Signal trop faible pour conclure.</p>
+            <div class="meta-row"><span>période <b>11.7515 j</b></span><span>snr <b>10.2</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-16703161.png" alt="Courbe de lumière de TIC 16703161">
+            <span class="stamp marginal">Non classée</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 16703161</p>
+            <p class="coords">RA 106.623 · DEC 37.599 · Tmag 9.42</p>
+            <p class="verdict-text">Creux unique, propre et arrondi, aucune autre structure dans le cycle complet -- la grille rapide avait pris le double de la vraie période (12.0066j), corrigé par la recherche fine. Rayon implicite 0.77 R_jup -- taille sans ambiguïté. Absente de la table TOI et d'aucune publication trouvée.</p>
+            <div class="meta-row"><span>période <b>6.0033 j</b></span><span>snr <b>19.1</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-293480903.png" alt="Courbe de lumière de TIC 293480903">
+            <span class="stamp marginal">Non classée</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 293480903</p>
+            <p class="coords">RA 49.972 · DEC -82.144 · Tmag 10.44</p>
+            <p class="verdict-text">Creux unique, net et isolé en V, aucune autre structure dans le cycle complet -- la grille rapide avait pris 3/2 de la vraie période (11.3540j), corrigé par la recherche fine. Rayon implicite 0.80 R_jup -- taille sans ambiguïté. Absente de la table TOI et d'aucune publication trouvée.</p>
+            <div class="meta-row"><span>période <b>7.5690 j</b></span><span>snr <b>27.6</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-281114303.png" alt="Courbe de lumière de TIC 281114303">
+            <span class="stamp reject">Structure double-creux</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 281114303</p>
+            <p class="coords">RA 68.862 · DEC 71.583 · Tmag 9.42</p>
+            <p class="verdict-text">Recherche affinée (1.3-2.0j) confirme un pic net à 1.4829j, mais le repliement à la vraie période montre deux creux distincts et rapprochés en phase par cycle (vers -0.10 et 0.0), pas un transit isolé -- contrairement à 16703161 et 293480903, ce n'était pas un simple alias de grille mais une vraie structure de binaire.</p>
+            <div class="meta-row"><span>période <b>1.4829 j</b></span><span>snr <b>—</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-122883754.png" alt="Courbe de lumière de TIC 122883754">
+            <span class="stamp reject">Binaire</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 122883754</p>
+            <p class="coords">RA 77.574 · DEC 40.660 · Tmag 8.86</p>
+            <p class="verdict-text">Profondeur ~4% avec modulation continue hors transit et ratio durée/période élevé (7.6%) -- signature de binaire à éclipses plutôt qu'un transit planétaire. Période confirmée par le script complet (4.3199j vs 4.3201j sur la grille), pas d'alias à corriger.</p>
+            <div class="meta-row"><span>période <b>4.3199 j</b></span><span>snr <b>19.3</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-145338612.png" alt="Courbe de lumière de TIC 145338612">
+            <span class="stamp reject">Forme non-transit</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 145338612</p>
+            <p class="coords">RA 122.593 · DEC -35.773 · Tmag 8.91</p>
+            <p class="verdict-text">Forme asymétrique avec queue de creux prolongée et bosse au-dessus de la baseline -- même défaut structurel que TIC 142677613. Ratio durée/période élevé (8.1%) cohérent avec une binaire plutôt qu'un transit propre. Période confirmée (2.4577j vs 2.4579j sur la grille).</p>
+            <div class="meta-row"><span>période <b>2.4577 j</b></span><span>snr <b>20.2</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-411685204.png" alt="Courbe de lumière de TIC 411685204">
+            <span class="stamp reject">Variable</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 411685204</p>
+            <p class="coords">RA 189.320 · DEC -56.788 · Tmag 8.73</p>
+            <p class="verdict-text">Courbe chaotique sur 4 secteurs très espacés (2023-2026), multiples excursions et amplitude de flux énorme -- profil de variabilité stellaire continue plutôt qu'un transit isolé. Période confirmée (11.0802j vs 11.0813j sur la grille).</p>
+            <div class="meta-row"><span>période <b>11.0802 j</b></span><span>snr <b>18.9</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-12876844.png" alt="Courbe de lumière de TIC 12876844">
+            <span class="stamp reject">Creux multiples</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 12876844</p>
+            <p class="coords">RA 343.315 · DEC 62.146 · Tmag 8.53</p>
+            <p class="verdict-text">Zone bruitée en bosse avec plusieurs creux imbriqués qui se chevauchent, pas un signal isolé et net -- même défaut que TIC 49003142. Période confirmée (7.1843j vs 7.1829j sur la grille).</p>
+            <div class="meta-row"><span>période <b>7.1843 j</b></span><span>snr <b>17.6</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-454141286.png" alt="Courbe de lumière de TIC 454141286">
+            <span class="stamp marginal">Non tranché</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 454141286</p>
+            <p class="coords">RA 64.773 · DEC 3.074 · Tmag 9.42</p>
+            <p class="verdict-text">Transit net à phase 0, mais légère remontée de flux en bord de fenêtre (~phase 0.45-0.5) qui pourrait évoquer une éclipse secondaire sans être assez nette pour trancher formellement. N'a pas été confirmé par stellar_params.py. Ni écarté ni retenu.</p>
+            <div class="meta-row"><span>période <b>5.3417 j</b></span><span>snr <b>8.8</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-259589049.png" alt="Courbe de lumière de TIC 259589049">
+            <span class="stamp marginal">Non tranché</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 259589049</p>
+            <p class="coords">RA 72.433 · DEC -53.002 · Tmag 10.49</p>
+            <p class="verdict-text">Dip à peine distinguable dans un bruit de fond important malgré un SNR correct (20.7). Signal trop faible et bruité pour conclure.</p>
+            <div class="meta-row"><span>période <b>4.9843 j</b></span><span>snr <b>20.7</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-6895773.png" alt="Courbe de lumière de TIC 6895773">
+            <span class="stamp marginal">Non classée</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 6895773</p>
+            <p class="coords">RA 125.701 · DEC 17.635 · Tmag 7.78</p>
+            <p class="verdict-text">Creux peu profond mais net, isolé et symétrique, rien d'autre dans le cycle complet. Rayon implicite 0.62 R_jup -- taille sans ambiguïté, le plus petit objet du lot 4. Absente de la table TOI et d'aucune publication trouvée.</p>
+            <div class="meta-row"><span>période <b>7.3019 j</b></span><span>snr <b>14.0</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-260659986.png" alt="Courbe de lumière de TIC 260659986">
+            <span class="stamp marginal">Non classée</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 260659986</p>
+            <p class="coords">RA 98.485 · DEC -59.961 · Tmag 10.65</p>
+            <p class="verdict-text">Recherche fine corrige la période (7.1394j de la grille était le double de la vraie période, harmoniques 1:2:3:4 très propres dans le périodogramme). Creux unique et net à la bonne période, ~0.9% de profondeur. Rayon implicite 1.83 R_jup -- zone ambiguë entre géante gazeuse et naine M compacte. Absente de la table TOI et d'aucune publication trouvée.</p>
+            <div class="meta-row"><span>période <b>3.5702 j</b></span><span>snr <b>20.2</b></span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="shot">
+            <img src="assets/crop/tic-159892657.png" alt="Courbe de lumière de TIC 159892657">
+            <span class="stamp reject">Binaire (ellipsoïdale)</span>
+          </div>
+          <div class="body">
+            <p class="tic">TIC 159892657</p>
+            <p class="coords">RA 269.544 · DEC 40.112 · Tmag 8.42</p>
+            <p class="verdict-text">Recherche affinée (grille avait pris 10.1879j, soit 5/2 de la vraie période) révèle un transit net et profond à 4.0749j, mais avec une modulation de flux en bosse symétrique entre les éclipses (~phase -0.35 à -0.15 et 0.15 à 0.4) -- signature de variation ellipsoïdale d'une binaire serrée déformée par la marée, même profil que TIC 385231167, TIC 116417661 et TIC 61113635 déjà classés ainsi.</p>
+            <div class="meta-row"><span>période <b>4.0749 j</b></span><span>snr <b>13.7</b></span></div>
           </div>
         </div>
     <!-- CARDS:END -->
@@ -1008,8 +2048,8 @@
         <div class="status-note">
         <!-- Généré par generer_site.py, ne pas éditer à la main -->
         <!-- STATUS:START -->
-          <p><strong style="color:#f4f1e9">Zéro nouvelle exoplanète découverte à ce stade — sur plus de 69 800 étoiles, 74 secteur(s) TESS.</strong> Ce n'est pas un échec : les transits détectables par relecture de données publiques restent rares, et l'essentiel des signaux réels appartient à des binaires ou des variables, pas à des planètes.</p>
-          <p>Ce que ce projet a produit de solide : 9 redétections confirmées de systèmes déjà connus (dont une planète officiellement confirmée, TOI-6442.01, retrouvée à moins d'une heure près sur sa période), et un pipeline qui sait désormais écarter ses propres faux positifs sans intervention manuelle systématique. Le balayage continue sur le reste des secteurs disponibles.</p>
+          <p><strong style="color:#f4f1e9">Zéro nouvelle exoplanète découverte à ce stade — sur plus de 156 500 étoiles, 108 secteur(s) TESS.</strong> Ce n'est pas un échec : les transits détectables par relecture de données publiques restent rares, et l'essentiel des signaux réels appartient à des binaires ou des variables, pas à des planètes.</p>
+          <p>Ce que ce projet a produit de solide : 21 redétections confirmées de systèmes déjà connus (dont une planète officiellement confirmée, TOI-6442.01, retrouvée à moins d'une heure près sur sa période), et un pipeline qui sait désormais écarter ses propres faux positifs sans intervention manuelle systématique. Le balayage continue sur le reste des secteurs disponibles.</p>
     <!-- STATUS:END -->
         </div>
 
